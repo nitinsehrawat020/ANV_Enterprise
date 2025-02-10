@@ -1,60 +1,23 @@
 import Carousel from "../../../ui/Carousel";
 
-import {
-  HerosectionRoot,
-  Banner,
-  Titlecontainer,
-  Title,
-  YourTrustedPartnerContainer1,
-  YourTrustedPartnerContainer,
-  YourTrustedPartner,
-  PopDesign,
-  Buttongroup,
-  ContactUs,
-  HowItWorks,
-  Howitwork,
-  BannerChild,
-} from ".";
+import Title from "./Title";
+import HeaderButton from "./HeaderButton";
+
+import { HerosectionRoot, Header, HeaderContainer, BannerChild } from ".";
 
 function HeroSection() {
   return (
     <HerosectionRoot>
-      <Banner>
-        <Titlecontainer>
-          <Title>
-            <YourTrustedPartnerContainer1>
-              <YourTrustedPartnerContainer>
-                <YourTrustedPartner>
-                  your trusted partner for creative
-                </YourTrustedPartner>
-                {` `}
-              </YourTrustedPartnerContainer>
-            </YourTrustedPartnerContainer1>
-            <PopDesign>Pop Design</PopDesign>
-          </Title>
-          <Buttongroup>
-            <ContactUs>
-              <HowItWorks>CONTACT US</HowItWorks>
-            </ContactUs>
-            <Howitwork>
-              <HowItWorks>HOW IT WORKS?</HowItWorks>
-            </Howitwork>
-          </Buttongroup>
-        </Titlecontainer>
+      <Header>
+        <HeaderContainer>
+          <Title />
+          <HeaderButton />
+        </HeaderContainer>
         <BannerChild>
           <Carousel />
         </BannerChild>
-      </Banner>
+      </Header>
     </HerosectionRoot>
-
-    // <>
-    //   <HeroContainer>
-    //     <StyledHeroSection>
-    //       <HeroContent />
-    //       <HeroCarousel />
-    //     </StyledHeroSection>
-    //   </HeroContainer>
-    // </>
   );
 }
 

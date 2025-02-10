@@ -15,15 +15,15 @@ const Embla__container = styled.div`
   display: flex;
 `;
 const Embla__slide = styled.div`
-  flex: 0 0 90%; /* Slide covers 80% of the viewport */
+  flex: 0 0 80%; /* Slide covers 80% of the viewport */
   max-width: 80%;
 
   @media ${device.mobile} {
-    flex: 0 0 100%;
+    flex: 0 0 80%;
   }
 
   img {
-    width: 70%;
+    width: 90%;
     height: auto;
     padding: 10px;
   }
