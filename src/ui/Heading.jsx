@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { device } from "../Styles/Theme";
 
 // const test = css`
 //   text-align: center;
@@ -11,6 +12,9 @@ const Heading = styled.h1`
     css`
       font-size: 3rem;
       font-weight: 600;
+      @media ${device.mobile} {
+        font-size: 1.5rem;
+      }
     `}
 
   ${(props) =>
@@ -18,22 +22,29 @@ const Heading = styled.h1`
     css`
       font-size: 2rem;
       font-weight: 600;
+
+      @media ${device.mobile} {
+        font-size: 1rem;
+      }
     `}
     
   ${(props) =>
     props.as === "h3" &&
     css`
       font-size: 2rem;
-      font-weight: 40;
+      font-weight: 400;
     `}
   ${(props) =>
     props.as === "h4" &&
     css`
       font-size: 3rem;
-      font-weight: 60;
+      font-weight: 600;
       text-align: center;
     `}
     
   line-height:1.4;
+  @media ${device.phone} {
+    line-height: 1;
+  }
 `;
 export default Heading;

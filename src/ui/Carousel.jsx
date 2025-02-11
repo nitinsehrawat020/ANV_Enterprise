@@ -7,7 +7,7 @@ const Embla = styled.div`
   overflow: hidden;
 
   text-align: center;
-  margin: 0 30px;
+
   display: flex;
   align-content: stretch;
 `;
@@ -15,11 +15,11 @@ const Embla__container = styled.div`
   display: flex;
 `;
 const Embla__slide = styled.div`
-  flex: 0 0 80%; /* Slide covers 80% of the viewport */
-  max-width: 80%;
+  flex: 0 0 100%; /* Slide covers 80% of the viewport */
+  /* max-width: 80%; */
 
   @media ${device.mobile} {
-    flex: 0 0 80%;
+    /* flex: 0 0 80%; */
   }
 
   img {
