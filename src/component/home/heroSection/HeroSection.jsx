@@ -1,9 +1,7 @@
-import Carousel from "../../../ui/Carousel";
-
 import Title from "./Title";
 import HeaderButton from "./HeaderButton";
 
-import { HerosectionRoot, Header, HeaderContainer, BannerChild } from ".";
+import { HerosectionRoot, Header, HeaderContainer, Image } from ".";
 
 function HeroSection() {
   return (
@@ -13,9 +11,9 @@ function HeroSection() {
           <Title />
           <HeaderButton />
         </HeaderContainer>
-        <BannerChild>
-          <Carousel />
-        </BannerChild>
+        <Image>
+          <img src="pictures\banner\background_1.png" />
+        </Image>
       </Header>
     </HerosectionRoot>
   );

@@ -11,6 +11,12 @@ export const StyledLogo = styled.div`
 export const Img = styled.img`
   height: 4rem;
   width: auto;
+  @media ${device.tablet} {
+    height: 3rem;
+  }
+  @media ${device.mobile} {
+    height: 3rem;
+  }
 `;
 
 //NavBars
@@ -18,37 +24,42 @@ export const Nav = styled.nav`
   height: 80px;
   width: 100%;
   display: flex;
-
   justify-content: Center;
   align-items: center;
-
-  font-size: 1rem;
+  font-size: var(--font-size-xs);
   z-index: 10;
+
+  @media ${device.tablet} {
+    height: 60px;
+  }
+  @media ${device.mobile} {
+    height: 60px;
+  }
 `;
 
 export const NavContainer = styled.div`
   display: flex;
   justify-content: space-between;
 
-  height: 80px;
+  height: auto;
   z-index: 1;
   width: 100%;
-  padding: 0 24px;
-  max-width: 1100px;
+  padding: 0 var(--padding-s);
+  max-width: 1200px;
   gap: 23px;
 `;
 export const MobileIcon = styled.div`
   display: none;
 
-  @media screen and (max-width: 780px) {
+  @media screen and (max-width: 768px) {
     display: block;
     position: absolute;
     top: 0;
     right: 0;
-    transform: translate(-100%, 70%);
+    transform: translate(-100%, 40%);
     font-size: 1.8rem;
     cursor: pointer;
-    color: #fff;
+    color: var(--color-white-500);
   }
 `;
 
@@ -104,6 +115,10 @@ export const NavBtnLink = styled(Link)`
       border-radius: 8px;
       border: 1px solid #000;
       background: #e7c067;
+
+      @media ${device.tablet} {
+        padding: 6px 12px;
+      }
     `}
   ${(props) =>
     props.type === "signup" &&
@@ -116,6 +131,10 @@ export const NavBtnLink = styled(Link)`
       border: 1px solid #fff;
       margin-left: 30px;
       color: #fff;
+
+      @media ${device.tablet} {
+        padding: 6px 12px;
+      }
 
       @media ${device.tablet} {
         margin-right: 0.2rem;
@@ -137,6 +156,10 @@ export const NavBtnLink = styled(Link)`
       margin-left: 15px;
       background-color: #fff;
       color: #000;
+
+      @media ${device.tablet} {
+        padding: 6px 12px;
+      }
 
       &:hover {
         background-color: rgb(44, 44, 44);

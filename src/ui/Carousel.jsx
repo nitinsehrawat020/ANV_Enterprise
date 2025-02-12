@@ -4,19 +4,24 @@ import Autoplay from "embla-carousel-autoplay";
 import { device } from "../Styles/Theme";
 
 const Embla = styled.div`
+  display: flex;
   overflow: hidden;
-
+  max-width: 80%;
   text-align: center;
 
-  display: flex;
-  align-content: stretch;
+  @media ${device.tablet} {
+    max-width: 70%;
+  }
+
+  @media ${device.mobile} {
+    max-width: 70%;
+  }
 `;
 const Embla__container = styled.div`
   display: flex;
 `;
 const Embla__slide = styled.div`
   flex: 0 0 100%; /* Slide covers 80% of the viewport */
-  /* max-width: 80%; */
 
   @media ${device.mobile} {
     /* flex: 0 0 80%; */

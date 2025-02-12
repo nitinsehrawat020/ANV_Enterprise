@@ -1,4 +1,4 @@
-import { Img, StyledLogo } from ".";
+import { Img, StyledLogo } from "./StyleNavBar";
 
 function Logo() {
   return (

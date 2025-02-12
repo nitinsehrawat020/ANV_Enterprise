@@ -8,7 +8,7 @@ import {
   NavLinks,
   NavBtn,
   NavBtnLink,
-} from ".";
+} from "./StyleNavBar";
 import Logo from "./Logo";
 
 function NavBar() {

@@ -12,6 +12,12 @@ const Heading = styled.h1`
     css`
       font-size: 3rem;
       font-weight: 600;
+      @media ${device.laptop} {
+        font-size: 2.2rem;
+      }
+      @media ${device.tablet} {
+        font-size: 1.8rem;
+      }
       @media ${device.mobile} {
         font-size: 1.5rem;
       }
@@ -33,6 +39,14 @@ const Heading = styled.h1`
     css`
       font-size: 2rem;
       font-weight: 400;
+
+      @media ${device.laptop} {
+        font-size: 1.5rem;
+      }
+
+      @media ${device.mobile} {
+        font-size: 1rem;
+      }
     `}
   ${(props) =>
     props.as === "h4" &&
@@ -43,6 +57,7 @@ const Heading = styled.h1`
     `}
     
   line-height:1.4;
+  z-index: 5;
   @media ${device.phone} {
     line-height: 1;
   }

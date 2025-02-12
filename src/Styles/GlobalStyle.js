@@ -16,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
 
 --color-background-200:#4B4F52;
 --color-background-500:#464646;
+--color-background-700:#3E3F3C;
 --color-background-800:#363732;
 --color-white-50: #f0fdf4;
 --color-white-500: #fff;
@@ -25,8 +26,10 @@ const GlobalStyle = createGlobalStyle`
 /* Gaps */
 
 /* Paddings */
---padding-xs: 1rem;
+--padding-xs-1: 0.5rem;
+--padding-xs-0: 1rem;
 --padding-s: 2rem;
+--padding-ls: 3rem;
 --padding-m: 4rem;
 --padding-l: 8rem;
 --padding-xl: 10rem;
@@ -35,6 +38,7 @@ const GlobalStyle = createGlobalStyle`
 --br-s: 2.5px;
 --br-m: 5px;
 --br-l: 10px;
+--br-xl: 15px;
 
 
 }
@@ -57,6 +61,7 @@ const GlobalStyle = createGlobalStyle`
     *::after {
         padding: 0;
         margin: 0;
+        
     }
     
 `;

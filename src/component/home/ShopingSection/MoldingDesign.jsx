@@ -1,27 +1,32 @@
+import { Button } from "../../../ui/Button";
 import Heading from "../../../ui/Heading";
 import {
-  FalseCeilTitle,
-  FalseCeilContainer,
-  StyledFalseCeil,
+  ModleTitle,
+  ModleContainer,
   CardBox,
+  Title,
+  // BackgroundConnect,
 } from "./ShopingStyle";
 import TitleCard from "./TitleCard";
 
 function MoldingDesign() {
   return (
-    <StyledFalseCeil>
-      <FalseCeilContainer>
-        <CardBox>
-          <TitleCard src="pictures/banner/image1.webp" />
-          <TitleCard src="pictures/banner/image2.webp" />
-        </CardBox>
-        <Heading as="h3">
-          <FalseCeilTitle>
+    <ModleContainer reverse="true">
+      <CardBox>
+        <TitleCard src="pictures/banner/image1.webp" />
+        <TitleCard src="pictures/banner/image2.webp" />
+      </CardBox>
+      <Heading as="h3">
+        <ModleTitle>
+          <Title>
             <span>Molding</span> DESIGN
-          </FalseCeilTitle>
-        </Heading>
-      </FalseCeilContainer>
-    </StyledFalseCeil>
+          </Title>
+          <Button variant="filled" size="1.5">
+            Check More Design
+          </Button>
+        </ModleTitle>
+      </Heading>
+    </ModleContainer>
   );
 }
 

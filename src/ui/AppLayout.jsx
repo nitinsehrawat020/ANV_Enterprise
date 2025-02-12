@@ -7,7 +7,7 @@ const StyledAppLayout = styled.div`
   width: 100%;
   height: auto;
 
-  background: #464646;
+  background: var(--color-background-500);
 `;
 
 function AppLayout() {
