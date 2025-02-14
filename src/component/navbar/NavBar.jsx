@@ -1,4 +1,5 @@
 import { FaBars } from "react-icons/fa6";
+import { ImCross } from "react-icons/im";
 import {
   NavMenu,
   MobileIcon,
@@ -10,8 +11,18 @@ import {
   NavBtnLink,
 } from "./StyleNavBar";
 import Logo from "./Logo";
+import Aside from "../aside/Aside";
+import { useState } from "react";
 
 function NavBar() {
+  const [menuToggle, setMenuToggle] = useState("false");
+  function openMenu() {
+    setMenuToggle("true");
+  }
+  function closeMenu() {
+    setMenuToggle("false");
+  }
+
   return (
     <Nav>
       <NavContainer>
@@ -34,9 +45,14 @@ function NavBar() {
           <NavBtnLink type="login">Login </NavBtnLink>
         </NavBtn>
         <MobileIcon>
-          <FaBars />
+          {menuToggle === "true" ? (
+            <ImCross onClick={closeMenu} />
+          ) : (
+            <FaBars onClick={openMenu} />
+          )}
         </MobileIcon>
       </NavContainer>
+      <Aside display={menuToggle} />
     </Nav>
   );
 }

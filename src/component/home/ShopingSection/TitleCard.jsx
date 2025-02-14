@@ -1,12 +1,10 @@
-import { CardContainer, StyledCard } from "./ShopingStyle";
+import { CardContainer } from "./ShopingStyle";
 
 function TitleCard({ src }) {
   return (
-    <StyledCard>
-      <CardContainer>
-        <img src={src} />
-      </CardContainer>
-    </StyledCard>
+    <CardContainer>
+      <img src={src} />
+    </CardContainer>
   );
 }
 

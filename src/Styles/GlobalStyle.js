@@ -15,13 +15,37 @@ const GlobalStyle = createGlobalStyle`
 /* Colors */
 
 --color-background-200:#4B4F52;
+--color-background-400:rgb(66, 66, 66);
 --color-background-500:#464646;
 --color-background-700:#3E3F3C;
 --color-background-800:#363732;
 --color-white-50: #f0fdf4;
 --color-white-500: #fff;
+--color-black-500: #000;
 --color-primary: #6c9eca;
 --color-secondary:#E7C067;
+
+/* 
+--color-secondary:#464646 ;
+--color-secondary:#969696 ;
+--color-secondary:#FF9900 ;
+--color-secondary:#FFD700 ;
+--color-secondary:#2E2E2E ;
+--color-secondary:#5E5E5E ;
+--color-secondary:#464646  ;
+--color-secondary:#4682B4  ;
+--color-secondary:#B44682  ;
+--color-secondary:#363636  ;
+--color-secondary:#666666  ;
+--color-secondary:#A64646  ;
+--color-secondary:#468C96 ;
+--color-secondary:#5AB4BF ;
+--color-secondary:#A4E4E0 ;
+--color-secondary:#E6A4C4 ;
+--color-secondary:#A4D8E6 ;
+--color-secondary:#E6BCA4 ;
+--color-secondary:#A4E6C0 ;
+--color-secondary:#C1A267 ; */
 
 /* Gaps */
 
@@ -45,6 +69,7 @@ const GlobalStyle = createGlobalStyle`
     body{
         padding: 0;
         margin:0%;
+        background-color: #464646;
     }
 
     a {
@@ -61,7 +86,7 @@ const GlobalStyle = createGlobalStyle`
     *::after {
         padding: 0;
         margin: 0;
-        
+        box-sizing: border-box;
     }
     
 `;

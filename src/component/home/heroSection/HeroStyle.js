@@ -47,7 +47,7 @@ export const HeaderContainer = styled.div`
   /* padding: 2.062rem 8rem; */
   gap: 2rem;
 
-  @media ${device.mobile} {
+  @media ${device.phnAndTab} {
     gap: 0.7rem;
   }
 `;
@@ -89,19 +89,16 @@ export const Buttongroup = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  box-sizing: border-box;
+
   gap: 1.5rem;
   color: var(--color-gray);
 
   @media ${device.laptop} {
-    margin-bottom: 1rem;
   }
   @media ${device.tablet} {
-    margin-bottom: 1rem;
   }
   @media ${device.mobile} {
     flex-direction: column;
-    margin-bottom: 1rem;
     gap: 0.8rem;
   }
 `;
@@ -142,14 +139,14 @@ export const Image = styled.div`
   /* border: 2px solid #363732; */
   border-radius: 10px;
   align-self: stretch;
-  margin-bottom: 20px;
-  overflow: hidden;
+
   display: flex;
   align-items: center;
   justify-content: center;
 
   img {
     max-width: 100%;
+    height: auto;
   }
 
   @media ${device.laptop} {
@@ -158,7 +155,6 @@ export const Image = styled.div`
   @media ${device.tablet} {
     margin: 0px 10px;
   }
-
   @media ${device.mobile} {
     margin: 0rem 10px;
   }

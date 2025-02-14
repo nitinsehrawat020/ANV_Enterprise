@@ -21,6 +21,7 @@ export const Img = styled.img`
 
 //NavBars
 export const Nav = styled.nav`
+  grid-area: navbar;
   height: 80px;
   width: 100%;
   display: flex;

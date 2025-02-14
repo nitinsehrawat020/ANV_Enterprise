@@ -5,6 +5,7 @@ import {
   ModleContainer,
   CardBox,
   Title,
+  BackgroundConnect,
   // BackgroundConnect,
 } from "./ShopingStyle";
 import TitleCard from "./TitleCard";
@@ -12,13 +13,14 @@ import TitleCard from "./TitleCard";
 function FalseCeilDesign() {
   return (
     <ModleContainer>
-      {/* <BackgroundConnect /> */}
+      <BackgroundConnect />
+
       <Heading as="h3">
         <ModleTitle>
           <Title>
             <span>FALSE CEILING</span> DESIGN
           </Title>
-          <Button variant="filled" size="1.5">
+          <Button variant="filled" size="1">
             Check More Design
           </Button>
         </ModleTitle>

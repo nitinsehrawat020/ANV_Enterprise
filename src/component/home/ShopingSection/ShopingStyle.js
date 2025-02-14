@@ -7,6 +7,23 @@ export const StyledShoping = styled.section`
   width: 100%;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+`;
+export const BackgroundConnect = styled.div`
+  width: 100%;
+  height: 20%;
+  max-width: 1200px;
+
+  position: absolute;
+
+  z-index: 0;
+  background-color: var(--color-background-400);
+
+  @media ${device.mobile} {
+    /* opacity: 0; */
+    height: 20%;
+    width: 90%;
+  }
 `;
 
 export const ShopingContainer = styled.div`
@@ -16,8 +33,11 @@ export const ShopingContainer = styled.div`
   align-items: center;
   flex-direction: column;
   gap: 2rem;
+  @media ${device.tablet} {
+    gap: 1.5rem;
+  }
   @media ${device.mobile} {
-    gap: 1rem;
+    gap: 1.5rem;
   }
 `;
 export const ShopingTitle = styled.div`
@@ -48,24 +68,17 @@ export const ModleContainer = styled.div`
   gap: 3rem;
   /* padding: 3rem; */
 
+  @media ${device.laptop} {
+    padding: 1rem;
+  }
   @media ${device.tablet} {
-    flex-direction: column;
+    flex-direction: ${(props) => (props.reverse ? `column-reverse` : `column`)};
+    gap: 1rem;
   }
   @media ${device.mobile} {
     flex-direction: ${(props) => (props.reverse ? `column-reverse` : `column`)};
-    gap: 1.5rem;
+    gap: 1rem;
   }
-`;
-export const BackgroundConnect = styled.div`
-  display: block;
-  position: absolute;
-  top: 70;
-  left: 40%;
-  width: 690px;
-  height: 180px;
-  z-index: 0;
-  background-color: var(--color-background-700);
-  border-radius: var(--br-xl);
 `;
 
 export const ModleTitle = styled.div`
@@ -83,8 +96,11 @@ export const ModleTitle = styled.div`
   @media ${device.laptop} {
     padding: 1.8rem 1.3rem;
   }
+  @media ${device.tablet} {
+    padding: 1rem 1rem;
+  }
   @media ${device.mobile} {
-    padding: 1.8rem 1.3rem;
+    padding: 1rem 1rem;
   }
 `;
 
@@ -104,26 +120,22 @@ export const Title = styled.div`
 export const CardBox = styled.div`
   display: flex;
   align-self: center;
-  gap: 1.5rem;
+  gap: 1.2rem;
   justify-content: space-between;
   z-index: 1;
+  @media ${device.laptop} {
+    margin: 0rem;
+  }
+  @media ${device.tablet} {
+    margin: 0rem 1rem;
+    gap: 0.9rem;
+  }
   @media ${device.mobile} {
     margin: 0rem 1rem;
     gap: 0.7rem;
   }
 `;
 
-export const StyledCard = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  border-radius: 0.6rem;
-  background: #363732;
-  @media ${device.mobile} {
-    padding: 1rem;
-  }
-`;
 export const CardContainer = styled.div`
   display: flex;
   overflow: hidden;
@@ -135,5 +147,10 @@ export const CardContainer = styled.div`
     height: auto;
     max-width: 15rem;
     border-radius: 0.4rem;
+    border: 5px solid var(--color-background-800);
+
+    @media ${device.mobile} {
+      width: 80%;
+    }
   }
 `;

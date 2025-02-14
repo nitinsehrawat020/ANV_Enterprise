@@ -1,7 +1,12 @@
 import Heading from "../../../ui/Heading";
 import FalseCeilDesign from "./FalseCeilDesign";
 import MoldingDesign from "./MoldingDesign";
-import { StyledShoping, ShopingContainer, ShopingTitle } from "./ShopingStyle";
+import {
+  StyledShoping,
+  ShopingContainer,
+  ShopingTitle,
+  BackgroundConnect,
+} from "./ShopingStyle";
 
 function ShopingSection() {
   return (

@@ -1,4 +1,4 @@
-import { TitleContainer, StyledTitle, PopDesign, P } from ".";
+import { TitleContainer, StyledTitle, PopDesign, P } from "./HeroStyle";
 import Heading from "../../../ui/Heading";
 
 function Title() {

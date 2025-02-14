@@ -1,7 +1,7 @@
 import Title from "./Title";
 import HeaderButton from "./HeaderButton";
 
-import { HerosectionRoot, Header, HeaderContainer, Image } from ".";
+import { HerosectionRoot, Header, HeaderContainer, Image } from "./HeroStyle";
 
 function HeroSection() {
   return (
