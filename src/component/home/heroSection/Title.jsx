@@ -1,4 +1,10 @@
-import { TitleContainer, StyledTitle, PopDesign, P } from "./HeroStyle";
+import {
+  TitleContainer,
+  StyledTitle,
+  PopDesign,
+  P,
+  SubHeading,
+} from "./HeroStyle";
 import Heading from "../../../ui/Heading";
 
 function Title() {
@@ -11,6 +17,10 @@ function Title() {
             <PopDesign> Pop Design</PopDesign>
           </StyledTitle>
         </Heading>
+        <SubHeading>
+          Experience comprehensive solutions from concept to completion. Allow
+          us to create the ideal POP design for your home or workplace.
+        </SubHeading>
       </TitleContainer>
     </div>
   );

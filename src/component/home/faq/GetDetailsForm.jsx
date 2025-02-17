@@ -12,7 +12,7 @@ function GetDetailsForm() {
         <form>
           <input
             type="tel"
-            placeholder="Enter Your Phone Number"
+            placeholder="Enter Your Phone Number...."
             autoComplete="off"
           />
           <input type="submit" value="Place A Call" onClick={submitForm} />

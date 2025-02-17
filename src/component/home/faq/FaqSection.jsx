@@ -1,6 +1,6 @@
 import Heading from "../../../ui/Heading";
 import Questions from "./Questions";
-import { StyledFaqContent } from "./StyleFaq";
+import { Bar, Content, StyledFaqContent } from "./StyleFaq";
 
 const questions = [
   "What is the process of buying a house?",
@@ -19,8 +19,11 @@ const answers = [
 function FaqSection() {
   return (
     <StyledFaqContent>
-      <Heading as="h3">FAQ&apos;s</Heading>
-      <Questions questions={questions} answers={answers} />
+      <Bar />
+      <Content>
+        <Heading as="h3">FAQ&apos;s</Heading>
+        <Questions questions={questions} answers={answers} />
+      </Content>
     </StyledFaqContent>
   );
 }

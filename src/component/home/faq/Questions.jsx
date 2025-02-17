@@ -1,18 +1,30 @@
 import { useState } from "react";
-import { Question, QuestionContainer, StyledQuestions } from "./StyleFaq";
+import {
+  Answer,
+  Question,
+  QuestionContainer,
+  StyledQuestions,
+} from "./StyleFaq";
 
-import { HiChevronDown } from "react-icons/hi";
+import { HiChevronDown, HiChevronUp } from "react-icons/hi";
 
 function Questions({ questions, answers }) {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(Array(questions.length).fill(false));
+
+  function toggleAnswer(index) {
+    setShow((prevShow) =>
+      prevShow.map((item, i) => (i === index ? !item : item))
+    );
+  }
+
   return (
     <StyledQuestions>
       {questions?.map((question, index) => (
         <QuestionContainer key={index}>
-          <Question>
-            {question} <HiChevronDown />
+          <Question onClick={() => toggleAnswer(index)}>
+            {question} {show[index] ? <HiChevronUp /> : <HiChevronDown />}
           </Question>
-          <p>{answers[index]}</p>
+          {show[index] && <Answer show={show[index]}>{answers[index]}</Answer>}
         </QuestionContainer>
       ))}
     </StyledQuestions>

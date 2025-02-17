@@ -1,17 +1,25 @@
-import { Buttongroup } from "./HeroStyle";
-import { Button } from "../../../ui/Button";
+import { useState } from "react";
+import { Buttongroup, QuoteBotton } from "./HeroStyle";
+import Modal from "../../../ui/Modal";
+import GetQuote from "../../../ui/GetQuote";
 
 function HeaderButton() {
+  const [isOpenModal, setIsOpenModal] = useState(false);
   return (
     <div>
       <Buttongroup>
-        <Button variant="filled" size="1.5">
-          CONTACT US
-        </Button>
-        <Button variant="outlined" size="1.5">
-          HOW IT WORKS?
-        </Button>
+        <QuoteBotton
+          type="quote"
+          onClick={() => setIsOpenModal((show) => !show)}
+        >
+          Get Quote
+        </QuoteBotton>
       </Buttongroup>
+      {isOpenModal && (
+        <Modal onClose={() => setIsOpenModal(false)}>
+          <GetQuote />
+        </Modal>
+      )}
     </div>
   );
 }

@@ -19,11 +19,20 @@ const GlobalStyle = createGlobalStyle`
 --color-background-500:#464646;
 --color-background-700:#3E3F3C;
 --color-background-800:#363732;
---color-white-50: #f0fdf4;
+--color-white-50:rgb(238, 238, 238);
 --color-white-500: #fff;
 --color-black-500: #000;
 --color-primary: #6c9eca;
+--color-primary-500: #6c9eca;
+--color-primary-600: #558fc2;
+--color-primary-700: #4888bf;
 --color-secondary:#E7C067;
+--color-succes:#2BDD66;
+--color-input:#A0864B;
+
+--backdrop-color: rgba(0, 0, 0, 0.3);
+
+
 
 /* 
 --color-secondary:#464646 ;
@@ -65,30 +74,67 @@ const GlobalStyle = createGlobalStyle`
 --br-xl: 15px;
 
 
+--shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+--shadow-md: 0px 0.6rem 2.4rem rgba(0, 0, 0, 0.06);
+--shadow-lg: 0 2.4rem 3.2rem rgba(0, 0, 0, 0.12);
+
+
+
 }
-    body{
-        padding: 0;
-        margin:0%;
-        background-color: #464646;
-    }
+body{
+    padding: 0;
+    margin:0%;
+    background-color: #464646;
+    font-family: var(--font-roboto);
+}
 
-    a {
-        color: inherit;
-        text-decoration: none;
-    }
-    
-    ul {
-        list-style: none;
-    }
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-    *,
-    *::before,
-    *::after {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-    }
+ul {
+    list-style: none;
+}
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+}
+
+*:disabled {
+  cursor: not-allowed;
+}
+
+select:disabled,
+input:disabled {
+  background-color: var(--color-background-200);
+  color: var(--color-background-500);
+}
     
+    input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+input:focus,
+button:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--color-background-800);
+  outline-offset: -1px;
+}
+
 `;
 
 export default GlobalStyle;

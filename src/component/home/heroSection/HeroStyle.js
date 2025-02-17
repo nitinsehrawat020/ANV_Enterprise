@@ -39,7 +39,7 @@ export const Header = styled.div`
 export const HeaderContainer = styled.div`
   align-self: stretch;
   flex-basis: 50%;
-  overflow: hidden;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,7 +66,7 @@ export const StyledTitle = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-
+  justify-content: center;
   @media ${device.laptop} {
     width: 25rem;
   }
@@ -82,6 +82,23 @@ export const P = styled.div``;
 export const PopDesign = styled.span`
   /* position: relative; */
   color: var(--color-secondary);
+`;
+
+export const SubHeading = styled.div`
+  /* width: 35rem; */
+  font-size: 1.2rem;
+
+  padding: 0px 2rem;
+
+  @media ${device.laptop} {
+    font-size: 1rem;
+  }
+  @media ${device.tablet} {
+    font-size: 1rem;
+  }
+  @media ${device.mobile} {
+    font-size: 1rem;
+  }
 `;
 
 export const Buttongroup = styled.div`
@@ -103,35 +120,26 @@ export const Buttongroup = styled.div`
   }
 `;
 
-export const ContactUs = styled.div`
-  border-radius: var(--br-m);
-  background-color: var(--color-primary);
-  overflow: hidden;
+export const QuoteBotton = styled.div`
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  padding: 10px 16px;
   justify-content: center;
-  padding: var(--padding-xs-1) var(--padding-xs-1);
-  cursor: pointer;
+  align-items: center;
+  border-radius: 8px;
+  border: 2px solid #000;
+  background: var(--color-primary-500);
+  color: var(--color-black-500);
+  font-size: 1.5rem;
 
   &:hover {
-    background-color: transparent;
-    border: 2px solid var(--color-primary);
-    color: var(--color-primary);
+    background-color: var(--color-primary-700);
+    color: var(--color-black-500);
   }
-`;
-export const Howitwork = styled.div`
-  border-radius: var(--br-m);
 
-  border: 2px solid var(--color-primary);
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding: var(--padding-xs-1) var(--padding-xs-1);
-  color: var(--color-primary);
-  cursor: pointer;
+  @media (max-width: 768px) {
+    padding: 6px 12px;
+    font-size: 1rem;
+  }
 `;
 
 export const Image = styled.div`

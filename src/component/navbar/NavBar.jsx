@@ -1,5 +1,6 @@
 import { FaBars } from "react-icons/fa6";
 import { ImCross } from "react-icons/im";
+import { IoIosArrowDropdown } from "react-icons/io";
 import {
   NavMenu,
   MobileIcon,
@@ -9,6 +10,7 @@ import {
   NavLinks,
   NavBtn,
   NavBtnLink,
+  Dropdown,
 } from "./StyleNavBar";
 import Logo from "./Logo";
 import Aside from "../aside/Aside";
@@ -16,6 +18,7 @@ import { useState } from "react";
 
 function NavBar() {
   const [menuToggle, setMenuToggle] = useState("false");
+  const [dropdownToggle, setDropdownToggle] = useState(false);
   function openMenu() {
     setMenuToggle("true");
   }
@@ -32,15 +35,33 @@ function NavBar() {
           <NavItem>
             <NavLinks to="/"> Home</NavLinks>
           </NavItem>
-          <NavItem>
-            <NavLinks to="design"> Design</NavLinks>
+
+          <NavItem
+            onMouseEnter={() => setDropdownToggle(true)}
+            onMouseLeave={() => setDropdownToggle(false)}
+            onClick={() => setDropdownToggle(!dropdownToggle)}
+          >
+            Design <IoIosArrowDropdown />
+            {dropdownToggle && (
+              <Dropdown
+                onMouseEnter={() => setDropdownToggle(true)}
+                onMouseLeave={() => setDropdownToggle(false)}
+              >
+                <NavItem>
+                  <NavLinks to="/designForeCeil">Molding Design</NavLinks>
+                </NavItem>
+                <NavItem>
+                  <NavLinks to="/designMolding">False-Ceil Design</NavLinks>
+                </NavItem>
+              </Dropdown>
+            )}
           </NavItem>
+
           <NavItem>
             <NavLinks to="about_us"> About Us</NavLinks>
           </NavItem>
         </NavMenu>
         <NavBtn>
-          <NavBtnLink type="quote">Get a Quote </NavBtnLink>
           <NavBtnLink type="signup">Sign Up </NavBtnLink>
           <NavBtnLink type="login">Login </NavBtnLink>
         </NavBtn>
@@ -52,7 +73,7 @@ function NavBar() {
           )}
         </MobileIcon>
       </NavContainer>
-      <Aside display={menuToggle} />
+      <Aside display={menuToggle} onClose={closeMenu} />
     </Nav>
   );
 }

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled, { css } from "styled-components";
 import { device } from "../../Styles/Theme";
 
@@ -29,6 +29,9 @@ export const Nav = styled.nav`
   align-items: center;
   font-size: var(--font-size-xs);
   z-index: 10;
+  position: sticky;
+  top: 0;
+  background: var(--color-background-500);
 
   @media ${device.tablet} {
     height: 60px;
@@ -48,6 +51,7 @@ export const NavContainer = styled.div`
   padding: 0 var(--padding-s);
   max-width: 1200px;
   gap: 23px;
+  transition: all 1sec ease-in-out;
 `;
 export const MobileIcon = styled.div`
   display: none;
@@ -70,29 +74,52 @@ export const NavMenu = styled.ul`
   list-style: none;
   text-align: center;
   margin: -22px;
+  color: var(--color-white-500);
+
   @media screen and (max-width: 768px) {
     display: none;
   }
 `;
-export const NavItem = styled.li`
-  height: 80px;
-`;
-export const NavLinks = styled(Link)`
+
+export const Dropdown = styled.div`
   display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+
+  background: var(--color-background-800);
+  border-radius: var(--br-m);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  color: var(--color-white-500);
+  padding: 10px;
+`;
+export const NavItem = styled.li`
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+`;
+export const NavLinks = styled(NavLink)`
+  display: flex;
+
   color: #fff;
   align-items: center;
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
   text-decoration: none;
+  gap: 5px;
 
-  &:active {
-    color: var(--color-grey-800);
-    background-color: var(--color-grey-50);
+  &.active {
+    border: 2px solid var(--color-primary-500);
+    background-color: var(--color-background-800);
+    border-radius: var(--br-l);
+    font-size: 1.1rem;
   }
 `;
 
-export const NavBtn = styled.nav`
+export const NavBtn = styled.div`
   display: flex;
   align-items: center;
 
@@ -105,22 +132,7 @@ export const NavBtn = styled.nav`
   }
 `;
 
-export const NavBtnLink = styled(Link)`
-  ${(props) =>
-    props.type === "quote" &&
-    css`
-      display: flex;
-      padding: 10px 16px;
-      justify-content: center;
-      align-items: center;
-      border-radius: 8px;
-      border: 1px solid #000;
-      background: #e7c067;
-
-      @media ${device.tablet} {
-        padding: 6px 12px;
-      }
-    `}
+export const NavBtnLink = styled(NavLink)`
   ${(props) =>
     props.type === "signup" &&
     css`

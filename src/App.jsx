@@ -5,6 +5,7 @@ import GlobalStyle from "./Styles/GlobalStyle";
 
 import isPropValid from "@emotion/is-prop-valid";
 import { StyleSheetManager } from "styled-components";
+import DesignForeCeil from "./Pages/DesignForeCeil";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
           <Routes>
             <Route element={<AppLayout />}>
               <Route path="/" element={<Home />} />
-              <Route path="/design" element={<Home />} />
+              <Route path="/designForeCeil" element={<DesignForeCeil />} />
             </Route>
           </Routes>
         </BrowserRouter>
