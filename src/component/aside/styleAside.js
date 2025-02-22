@@ -13,7 +13,7 @@ export const StyledAside = styled.div`
     padding: 2rem;
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     gap: 2rem;
@@ -21,7 +21,7 @@ export const StyledAside = styled.div`
     background-color: var(--color-background-800);
     color: var(--color-white-500);
     transition: all 1sec ease-in-out;
-    z-index: 2;
+    z-index: 999;
   }
 
   &.ImCross {

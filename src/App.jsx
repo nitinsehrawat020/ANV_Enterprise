@@ -6,6 +6,9 @@ import GlobalStyle from "./Styles/GlobalStyle";
 import isPropValid from "@emotion/is-prop-valid";
 import { StyleSheetManager } from "styled-components";
 import DesignForeCeil from "./Pages/DesignForeCeil";
+import DesignMolding from "./Pages/DesignMolding";
+import AboutUs from "./Pages/AboutUs";
+import LoginAndSignup from "./Pages/LoginAndSignup";
 
 function App() {
   return (
@@ -16,7 +19,11 @@ function App() {
           <Routes>
             <Route element={<AppLayout />}>
               <Route path="/" element={<Home />} />
-              <Route path="/designForeCeil" element={<DesignForeCeil />} />
+              <Route path="/designFalseCeil" element={<DesignForeCeil />} />
+              <Route path="/designMolding" element={<DesignMolding />} />
+              <Route path="/aboutUs" element={<AboutUs />} />
+              <Route path="/login" element={<LoginAndSignup />} />
+              <Route path="*" element={<LoginAndSignup />} />
             </Route>
           </Routes>
         </BrowserRouter>

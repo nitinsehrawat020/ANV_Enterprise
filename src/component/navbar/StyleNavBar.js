@@ -28,7 +28,7 @@ export const Nav = styled.nav`
   justify-content: Center;
   align-items: center;
   font-size: var(--font-size-xs);
-  z-index: 10;
+  z-index: 999;
   position: sticky;
   top: 0;
   background: var(--color-background-500);
@@ -112,10 +112,10 @@ export const NavLinks = styled(NavLink)`
   gap: 5px;
 
   &.active {
-    border: 2px solid var(--color-primary-500);
-    background-color: var(--color-background-800);
-    border-radius: var(--br-l);
-    font-size: 1.1rem;
+    border-bottom: 2px solid var(--color-primary-500);
+    background-image: linear-gradient(180deg, #6c9eca 0%, transparent 90%);
+    border-radius: 8px;
+    font-size: 1rem;
   }
 `;
 

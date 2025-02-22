@@ -14,20 +14,29 @@ const GlobalStyle = createGlobalStyle`
 --fontsize-xl: 10rem;
 /* Colors */
 
+//backgrounds
+--color-background-100:#5B5B5B;
 --color-background-200:#4B4F52;
 --color-background-400:rgb(66, 66, 66);
 --color-background-500:#464646;
 --color-background-700:#3E3F3C;
 --color-background-800:#363732;
+
+//text
 --color-white-50:rgb(238, 238, 238);
 --color-white-500: #fff;
+
 --color-black-500: #000;
+
 --color-primary: #6c9eca;
 --color-primary-500: #6c9eca;
 --color-primary-600: #558fc2;
 --color-primary-700: #4888bf;
+
 --color-secondary:#E7C067;
+
 --color-succes:#2BDD66;
+
 --color-input:#A0864B;
 
 --backdrop-color: rgba(0, 0, 0, 0.3);
@@ -86,6 +95,7 @@ body{
     margin:0%;
     background-color: #464646;
     font-family: var(--font-roboto);
+    color: var(--color-white-500);
 }
 
 a {

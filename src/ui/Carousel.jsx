@@ -1,36 +1,37 @@
 import useEmblaCarousel from "embla-carousel-react";
 import styled from "styled-components";
 import Autoplay from "embla-carousel-autoplay";
-import { device } from "../Styles/Theme";
 
 const Embla = styled.div`
   display: flex;
   overflow: hidden;
-  max-width: 80%;
+  width: 80%; /* Adjust to parent width */
+  height: 80%; /* Adjust to parent height */
   text-align: center;
-
-  @media ${device.tablet} {
-    max-width: 70%;
+  border-radius: 10px;
+  @media (max-width: 768px) {
+    width: 50%;
+    height: 80%;
   }
-
-  @media ${device.mobile} {
-    max-width: 70%;
+  @media (max-width: 480px) {
+    width: 80%;
+    height: 80%;
   }
 `;
+
 const Embla__container = styled.div`
   display: flex;
+  width: 100%; /* Ensure container takes full width */
+  height: 100%; /* Ensure container takes full height */
 `;
-const Embla__slide = styled.div`
-  flex: 0 0 100%; /* Slide covers 80% of the viewport */
 
-  @media ${device.mobile} {
-    /* flex: 0 0 80%; */
-  }
+const Embla__slide = styled.div`
+  flex: 0 0 100%; /* Slide covers 100% of the container */
 
   img {
-    width: 90%;
-    height: auto;
-    padding: 10px;
+    width: 100%; /* Adjust image to slide width */
+    height: 100%; /* Adjust image to slide height */
+    //Ensure image covers the slide
   }
 `;
 
@@ -38,21 +39,19 @@ function Carousel() {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()]);
 
   return (
-    <>
-      <Embla ref={emblaRef}>
-        <Embla__container>
-          <Embla__slide>
-            <img src="/pictures/banner/image1.webp" />
-          </Embla__slide>
-          <Embla__slide>
-            <img src="/pictures/banner/image2.webp" />
-          </Embla__slide>
-          <Embla__slide>
-            <img src="/pictures/banner/image3.webp" />
-          </Embla__slide>
-        </Embla__container>
-      </Embla>
-    </>
+    <Embla ref={emblaRef}>
+      <Embla__container>
+        <Embla__slide>
+          <img src="/pictures/banner/image1.webp" alt="Slide 1" />
+        </Embla__slide>
+        <Embla__slide>
+          <img src="/pictures/banner/image2.webp" alt="Slide 2" />
+        </Embla__slide>
+        <Embla__slide>
+          <img src="/pictures/banner/image3.webp" alt="Slide 3" />
+        </Embla__slide>
+      </Embla__container>
+    </Embla>
   );
 }
 

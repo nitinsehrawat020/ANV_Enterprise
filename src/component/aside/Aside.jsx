@@ -20,18 +20,19 @@ function Aside({ display, onClose }) {
           </ListLink>
         </ListItem>
         <ListItem>
-          <ListLink to="/design" onClick={onClose}>
-            Design
+          <ListLink onClick={onClose} to="/designFalseCeil">
+            False Ceil Design
           </ListLink>
         </ListItem>
         <ListItem>
-          <ListLink onClick={onClose}>False Ceil Design</ListLink>
+          <ListLink onClick={onClose} to="designMolding">
+            Molding Design
+          </ListLink>
         </ListItem>
         <ListItem>
-          <ListLink onClick={onClose}>Molding Design</ListLink>
-        </ListItem>
-        <ListItem>
-          <ListLink onClick={onClose}>About Us</ListLink>
+          <ListLink onClick={onClose} to="/AboutUs">
+            About Us
+          </ListLink>
         </ListItem>
       </StyledList>
     </StyledAside>

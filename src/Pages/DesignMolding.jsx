@@ -1,5 +1,5 @@
 import { Main } from ".";
-
+import CardContainer from "../component/design/CardContainer";
 import DesignCard from "../component/design/DesignCard";
 import {
   Category,
@@ -11,14 +11,14 @@ import Pagination from "../ui/Pagination";
 
 const data = [
   {
-    title: "False Ceil Design",
+    title: "Minimalist Ceiling Design",
     designType: "POP",
-    designArea: "Living Room",
+    designArea: "Office",
     description:
-      "Your Search for the POP False Ceil Design to make your dream house more attractive end here. Just pick the design and sit with a cup of tea and let us began with our magic here found all kind of design for your need and use the sort and category to find for what you are looking for. In case you need any help feel free to Contact Us",
-    ETA: "4 days",
-    rating: 4,
-    img: "/pictures/banner/image1.webp",
+      "A clean and minimalist ceiling design, perfect for modern office spaces. It enhances the ambiance while maintaining a professional look.",
+    ETA: "3 days",
+    rating: 4.3,
+    img: "/pictures/banner/image5.webp",
   },
   {
     title: "Modern Ceiling Design",
@@ -51,25 +51,16 @@ const data = [
     img: "/pictures/banner/image4.webp",
   },
   {
-    title: "Minimalist Ceiling Design",
+    title: "False Ceil Design",
     designType: "POP",
-    designArea: "Office",
+    designArea: "Living Room",
     description:
-      "A clean and minimalist ceiling design, perfect for modern office spaces. It enhances the ambiance while maintaining a professional look.",
-    ETA: "3 days",
-    rating: 4.3,
-    img: "/pictures/banner/image5.webp",
+      "Your Search for the POP False Ceil Design to make your dream house more attractive end here. Just pick the design and sit with a cup of tea and let us began with our magic here found all kind of design for your need and use the sort and category to find for what you are looking for. In case you need any help feel free to Contact Us",
+    ETA: "4 days",
+    rating: 4,
+    img: "/pictures/banner/image1.webp",
   },
-  {
-    title: "Royal Ceiling Finish",
-    designType: "Gypsum",
-    designArea: "Hallway",
-    description:
-      "A grand and royal gypsum ceiling design to make your hallway look luxurious and eye-catching.",
-    ETA: "5 days",
-    rating: 4.8,
-    img: "/pictures/banner/molding1.webp",
-  },
+
   {
     title: "Elegant Ceiling Décor",
     designType: "Plaster",
@@ -91,31 +82,21 @@ const data = [
     img: "/pictures/banner/smallRoom.webp",
   },
   {
-    title: "Vintage Ceiling Design",
-    designType: "POP",
-    designArea: "Bedroom",
+    title: "Royal Ceiling Finish",
+    designType: "Gypsum",
+    designArea: "Hallway",
     description:
-      "A vintage-style ceiling design to give your bedroom a charming and cozy atmosphere.",
+      "A grand and royal gypsum ceiling design to make your hallway look luxurious and eye-catching.",
     ETA: "5 days",
-    rating: 4.6,
-    img: "/pictures/banner/smallRoom.webp",
-  },
-  {
-    title: "Vintage Ceiling Design",
-    designType: "POP",
-    designArea: "Bedroom",
-    description:
-      "A vintage-style ceiling design to give your bedroom a charming and cozy atmosphere.",
-    ETA: "5 days",
-    rating: 4.6,
-    img: "/pictures/banner/smallRoom.webp",
+    rating: 4.8,
+    img: "/pictures/banner/molding1.webp",
   },
 ];
-function DesignForeCeil() {
+function DesignMolding() {
   return (
     <>
       <Main>
-        <TitleContainer title="False Ceil Design" />
+        <TitleContainer title="Molding Design" />
 
         <StyleCardContainer>
           <Category>
@@ -129,4 +110,4 @@ function DesignForeCeil() {
   );
 }
 
-export default DesignForeCeil;
+export default DesignMolding;
