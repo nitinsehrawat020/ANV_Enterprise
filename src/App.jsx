@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AppLayout from "./ui/AppLayout";
+import UserAppLayout from "./ui/AppLayout";
 import Home from "./Pages/Home";
 import GlobalStyle from "./Styles/GlobalStyle";
 
@@ -9,6 +9,12 @@ import DesignForeCeil from "./Pages/DesignForeCeil";
 import DesignMolding from "./Pages/DesignMolding";
 import AboutUs from "./Pages/AboutUs";
 import LoginAndSignup from "./Pages/LoginAndSignup";
+import Dashboard from "./Pages/admin/Dashboard";
+import AdminAppLayout from "./ui/AdminAppLayout";
+import Workers from "./Pages/admin/Workers";
+import Sites from "./Pages/admin/Sites";
+import Vendours from "./Pages/admin/Vendours";
+import Setting from "./Pages/admin/Setting";
 
 function App() {
   return (
@@ -17,13 +23,20 @@ function App() {
         <GlobalStyle />
         <BrowserRouter>
           <Routes>
-            <Route element={<AppLayout />}>
+            <Route element={<UserAppLayout />}>
               <Route path="/" element={<Home />} />
               <Route path="/designFalseCeil" element={<DesignForeCeil />} />
               <Route path="/designMolding" element={<DesignMolding />} />
               <Route path="/aboutUs" element={<AboutUs />} />
               <Route path="/login" element={<LoginAndSignup />} />
-              <Route path="*" element={<LoginAndSignup />} />
+              <Route path="*" element={<Home />} />
+            </Route>
+            <Route element={<AdminAppLayout />}>
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/worker" element={<Workers />} />
+              <Route path="/site" element={<Sites />} />
+              <Route path="/vendour" element={<Vendours />} />
+              <Route path="/setting" element={<Setting />} />
             </Route>
           </Routes>
         </BrowserRouter>

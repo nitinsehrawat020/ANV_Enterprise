@@ -24,12 +24,12 @@ function LoginAndSignup() {
           <OverlayContainer active={active}>
             <div className="image-container">
               <img
-                src="/public/pictures/illustrate/undraw_fingerprint-login_19qv.svg"
+                src="/pictures/illustrate/undraw_fingerprint-login_19qv.svg"
                 alt="login"
                 className={active ? "active" : ""}
               />
               <img
-                src="/public/pictures/illustrate/undraw_sign-up_z2ku.svg"
+                src="/pictures/illustrate/undraw_sign-up_z2ku.svg"
                 alt="register"
                 className={!active ? "active" : ""}
               />
