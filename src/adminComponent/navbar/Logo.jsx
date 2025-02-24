@@ -1,8 +1,8 @@
 import { Img, StyleNavBarLogo } from "./StyleNavBar";
 
-function Logo() {
+function Logo({ parent }) {
   return (
-    <StyleNavBarLogo>
+    <StyleNavBarLogo parent={parent}>
       <Img src="\pictures\logo\Logo.png" alt="the Logo" />
     </StyleNavBarLogo>
   );

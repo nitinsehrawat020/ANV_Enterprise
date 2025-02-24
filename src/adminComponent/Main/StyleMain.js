@@ -4,4 +4,5 @@ export const StyledMain = styled.div`
   justify-self: stretch;
   align-self: stretch;
   background-color: var(--color-background-400);
+  overflow: auto;
 `;

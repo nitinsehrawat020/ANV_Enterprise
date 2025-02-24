@@ -1,4 +1,4 @@
-import Account from "./Account";
+import Account from "../../ui/Account";
 import Logo from "./Logo";
 import Menu from "./Menu";
 import { StyleNavBar, StyleNavBarContainer } from "./StyleNavBar";
@@ -7,9 +7,9 @@ function NavBar() {
   return (
     <StyleNavBar>
       <StyleNavBarContainer>
-        <Logo />
+        <Logo parent="navbar" />
         <Menu />
-        <Account />
+        <Account display="false" />
       </StyleNavBarContainer>
     </StyleNavBar>
   );

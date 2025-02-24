@@ -3,6 +3,8 @@ import UserAppLayout from "./ui/AppLayout";
 import Home from "./Pages/Home";
 import GlobalStyle from "./Styles/GlobalStyle";
 
+import { PrimeReactProvider } from "primereact/api";
+
 import isPropValid from "@emotion/is-prop-valid";
 import { StyleSheetManager } from "styled-components";
 import DesignForeCeil from "./Pages/DesignForeCeil";
@@ -21,25 +23,27 @@ function App() {
     <>
       <StyleSheetManager shouldForwardProp={shouldForwardProp}>
         <GlobalStyle />
-        <BrowserRouter>
-          <Routes>
-            <Route element={<UserAppLayout />}>
-              <Route path="/" element={<Home />} />
-              <Route path="/designFalseCeil" element={<DesignForeCeil />} />
-              <Route path="/designMolding" element={<DesignMolding />} />
-              <Route path="/aboutUs" element={<AboutUs />} />
-              <Route path="/login" element={<LoginAndSignup />} />
-              <Route path="*" element={<Home />} />
-            </Route>
-            <Route element={<AdminAppLayout />}>
-              <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/worker" element={<Workers />} />
-              <Route path="/site" element={<Sites />} />
-              <Route path="/vendour" element={<Vendours />} />
-              <Route path="/setting" element={<Setting />} />
-            </Route>
-          </Routes>
-        </BrowserRouter>
+        <PrimeReactProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route element={<UserAppLayout />}>
+                <Route path="/" element={<Home />} />
+                <Route path="/designFalseCeil" element={<DesignForeCeil />} />
+                <Route path="/designMolding" element={<DesignMolding />} />
+                <Route path="/aboutUs" element={<AboutUs />} />
+                <Route path="/login" element={<LoginAndSignup />} />
+                <Route path="*" element={<Home />} />
+              </Route>
+              <Route element={<AdminAppLayout />}>
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/worker" element={<Workers />} />
+                <Route path="/site" element={<Sites />} />
+                <Route path="/vendour" element={<Vendours />} />
+                <Route path="/setting" element={<Setting />} />
+              </Route>
+            </Routes>
+          </BrowserRouter>
+        </PrimeReactProvider>
       </StyleSheetManager>
     </>
   );

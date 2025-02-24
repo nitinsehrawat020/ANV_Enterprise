@@ -5,6 +5,7 @@ export const StyleNavBar = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 
   background-color: var(--color-background-800);
 
@@ -13,6 +14,7 @@ export const StyleNavBar = styled.nav`
     bottom: 0;
     width: 100%;
     z-index: 100;
+    height: 80px;
   }
 `;
 
@@ -35,14 +37,14 @@ export const StyleNavBarContainer = styled.div`
 `;
 
 export const StyleNavBarLogo = styled(NavLink)`
-  display: flex;
+  display: ${(props) => (props.parent === "navbar" ? "flex" : "none")};
   align-items: center;
   justify-content: center;
 
   cursor: pointer;
 
   @media (max-width: 768px) {
-    display: none;
+    display: ${(props) => (props.parent === "header" ? "flex" : "none")};
   }
 `;
 
@@ -88,16 +90,20 @@ export const StyleNavBarMenuList = styled.ul`
 `;
 
 export const StyleNavBarAccount = styled.div`
-  display: flex;
+  display: ${(props) => (props.display === "false" ? "flex" : "none")};
   align-items: center;
   justify-content: center;
-  padding: 1rem;
-
+  padding: 0.6rem 1rem;
+  border-radius: var(--br-l);
+  background-color: var(--color-background-200);
+  gap: 0.5rem;
   @media (max-width: 768px) {
-    display: none;
+    display: ${(props) => (props.display === "true" ? "flex" : "none")};
+    gap: 0.2rem;
   }
 
   @media (max-width: 480px) {
-    display: none;
+    display: ${(props) => (props.display === "true" ? "flex" : "none")};
+    gap: 0.2rem;
   }
 `;

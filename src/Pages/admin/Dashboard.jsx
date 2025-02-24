@@ -1,5 +1,7 @@
+import { Content } from "./Style";
+
 function Dashboard() {
-  return <div>dashboard</div>;
+  return <Content></Content>;
 }
 
 export default Dashboard;

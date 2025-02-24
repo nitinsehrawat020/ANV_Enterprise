@@ -8,7 +8,7 @@ export const StyledAdminAppLayout = styled.div`
   height: 100vh;
   display: grid;
   grid-template-columns: 180px 1fr;
-  grid-template-rows: 50px 1fr;
+  grid-template-rows: 80px 1fr;
   //prettier-ignore
   grid-template-areas: 
   " navbar header"
