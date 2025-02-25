@@ -8,9 +8,9 @@ export const Content = styled.main`
   align-items: center;
   justify-content: center;
 
-  /* padding: 0rem 1rem; */
+  padding: 0rem 1rem;
 
   @media ${device.phnAndTab} {
-    gap: 1rem;
+    /* gap: 1rem; */
   }
 `;

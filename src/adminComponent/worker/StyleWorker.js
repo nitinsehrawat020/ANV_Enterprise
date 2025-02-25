@@ -128,12 +128,89 @@ export const FloatingIconButton = styled.div`
 `;
 
 // Category
-export const CategoryContainer = styled.div`
+
+export const StyleCategory = styled.div`
   width: 100%;
   max-width: 1200px;
   display: flex;
-  align-items: center;
   justify-content: flex-start;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--color-background-200);
+`;
+export const CategoryContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 0.8rem 1.5rem;
   gap: 1rem;
+  font-size: 1.3rem;
+  background-color: var(--color-background-800);
+  border-radius: var(--br-l);
+
+  @media (max-width: 768px) {
+    padding: 0.8rem 0.5rem;
+    gap: 0.2rem;
+    font-size: 1.3rem;
+  }
+  @media (max-width: 480px) {
+    padding: 0.8rem 0.5rem;
+    gap: 0.2rem;
+    font-size: 0.8rem;
+  }
+`;
+
+export const CategoryList = styled.div`
+  display: flex;
+  gap: 1rem;
+
+  @media (max-width: 768px) {
+    gap: 0.2rem;
+  }
+`;
+
+export const CategoryItem = styled.div`
+  padding: 0.5rem;
+  border-radius: var(--br-l);
+  cursor: pointer;
+  background-color: var(--color-background-200);
+  &:hover {
+    background-color: var(--color-background-500);
+  }
+  &.active {
+    background-color: var(--color-primary-500);
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.2rem;
+  }
+`;
+
+export const StyleWorkerList = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0rem;
+  gap: 1rem;
+`;
+
+export const WorkerListContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  /* align-items: center; */
+  justify-content: center;
+  padding: 1rem 0rem;
+  gap: 1rem;
+`;
+
+export const StyledWorkerCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  gap: 1rem;
+  background-color: var(--color-background-200);
+  border-radius: var(--br-l);
 `;
