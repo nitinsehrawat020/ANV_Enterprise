@@ -1,4 +1,5 @@
 import * as React from "react";
+
 import Box from "@mui/material/Box";
 import Backdrop from "@mui/material/Backdrop";
 import SpeedDial from "@mui/material/SpeedDial";
@@ -9,32 +10,51 @@ import CurrencyRupeeOutlinedIcon from "@mui/icons-material/CurrencyRupeeOutlined
 import PriceCheckIcon from "@mui/icons-material/PriceCheck";
 import GroupAddIcon from "@mui/icons-material/GroupAdd";
 import Modal from "./Modal";
+import UpdatePaymentModal from "../adminComponent/worker/UpdatePaymentModal";
+import PaymentHistoryModal from "../adminComponent/worker/PaymentHistoryModal";
+import AddWorkerModal from "../adminComponent/worker/AddWorkerModal";
 
-export default function SpeedDialTooltipOpen({ setIsOpenModal }) {
+export default function SpeedDialTooltipOpen() {
   const actions = [
     {
-      icon: <CurrencyRupeeOutlinedIcon />,
+      icon: (
+        <Modal.Open opens="updatePayment">
+          <CurrencyRupeeOutlinedIcon />
+        </Modal.Open>
+      ),
       name: "Update Payment",
       operation: () => {
-        setIsOpenModal("updatePayment");
+        <Modal.Window name="updatePayment">
+          <UpdatePaymentModal />
+        </Modal.Window>;
         handleClose();
       },
     },
     {
-      icon: <PriceCheckIcon />,
+      icon: (
+        <Modal.Open opens="paymentHistory">
+          <PriceCheckIcon />
+        </Modal.Open>
+      ),
       name: "Payment History",
       operation: () => {
-        setIsOpenModal("paymentHistory");
-
+        <Modal.Window name="paymentHistory">
+          <PaymentHistoryModal />
+        </Modal.Window>;
         handleClose();
       },
     },
     {
-      icon: <GroupAddIcon />,
+      icon: (
+        <Modal.Open opens="addWorker">
+          <GroupAddIcon />
+        </Modal.Open>
+      ),
       name: "Add Worker",
       operation: () => {
-        setIsOpenModal("addWorker");
-
+        <Modal.Window name="addWorker">
+          <AddWorkerModal />
+        </Modal.Window>;
         handleClose();
       },
     },

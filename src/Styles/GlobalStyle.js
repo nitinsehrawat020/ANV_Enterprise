@@ -145,6 +145,38 @@ select:focus {
   outline-offset: -1px;
 }
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 1;
+    border: 2px solid var(--color-background-800);
+  }
+  thead tr {
+    text-align: center;
+    padding: 0.3rem;
+    background-color: var(--color-background-800);
+    border: 1px solid var(--color-background-800);
+  }
+  thead th {
+    text-align: center;
+    padding: 0.3rem;
+
+    background-color: var(--color-background-300);
+    border: 1px solid var(--color-background-800);
+  }
+  tr:nth-child(even) {
+    background-color: var(--color-background-800);
+  }
+  tr:nth-child(even) {
+    background-color: var(--color-background-800);
+  }
+  td {
+    text-align: center;
+    padding: 0.3rem;
+    border: 1px solid var(--color-background-500);
+    font-size: 0.8rem;
+  }
+
 
 `;
 

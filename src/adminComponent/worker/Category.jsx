@@ -6,8 +6,7 @@ import {
   StyleCategory,
 } from "./StyleWorker";
 
-function Category() {
-  const [active, setActive] = useState("active");
+function Category({ active, setActive }) {
   return (
     <StyleCategory>
       <CategoryContainer>

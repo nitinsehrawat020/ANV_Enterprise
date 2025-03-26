@@ -1,68 +1,73 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import {
   AttendanceBox,
   AttendanceContainer,
   AttendanceButton,
-  StyleActionButton,
   PendingListButton,
   PendingList,
 } from "./StyleWorker";
 import Modal from "../../ui/Modal";
+import AttendanceModal from "./AttendanceModal";
+import { useOutsideClick } from "../../hooks/useOutsideClick,js";
 
-function Attendance({ WorkerData }) {
+function Attendance({ WorkerData, sites }) {
   const [attendanceDropdown, setAttendanceDropdown] = useState(false);
-  const [selectedItem, setSelectedItem] = useState(null);
-  const [isOpenModal, setIsOpenModal] = useState(false);
-  const uniqueNotAvailableDays = new Set();
+  const ref = useOutsideClick(() => setAttendanceDropdown(false));
 
-  const WorkersAttendance = WorkerData.map((worker) => {
-    const notAvailableDays = Object.keys(worker.attendance).filter(
-      (date) => worker.attendance[date] === "not_available"
-    );
-    return {
-      name: worker.name,
-      notAvailableDays,
-    };
-  });
-
-  WorkersAttendance.forEach((worker) => {
-    worker.notAvailableDays.forEach((day) => {
-      uniqueNotAvailableDays.add(day);
+  const WorkersAttendance = useMemo(() => {
+    return WorkerData.map((worker) => {
+      const notAvailableDays = Object.keys(worker.attendance).filter(
+        (date) => worker.attendance[date].value === "not_available"
+      );
+      return {
+        name: worker.name,
+        notAvailableDays,
+      };
     });
-  });
+  }, [WorkerData]);
+
+  const uniqueNotAvailableDays = useMemo(() => {
+    const daysSet = new Set();
+    WorkersAttendance.forEach((worker) => {
+      worker.notAvailableDays.forEach((day) => {
+        daysSet.add(day);
+      });
+    });
+    return [...daysSet];
+  }, [WorkersAttendance]);
 
   return (
     <AttendanceContainer>
       Attendance:-
       <AttendanceBox attendanceDropdown={attendanceDropdown}>
         <PendingListButton
-          onClick={() =>
-            setAttendanceDropdown((attendanceDropdown) => !attendanceDropdown)
-          }
+          onClick={() => setAttendanceDropdown((prev) => !prev)}
         >
           View Pending List
         </PendingListButton>
         {attendanceDropdown && (
-          <PendingList>
-            <AttendanceButton onClick={() => setIsOpenModal(true)}>
-              Today Attendance
-            </AttendanceButton>
-            {[...uniqueNotAvailableDays].map((day, index) => (
-              <AttendanceButton
-                key={index}
-                onClick={() => {
-                  setIsOpenModal(true);
-                  setSelectedItem(day);
-                }}
-              >
-                {day}
-              </AttendanceButton>
+          <PendingList ref={ref}>
+            <Modal.Open opens="TodayAttendance">
+              <AttendanceButton>Today Attendance</AttendanceButton>
+            </Modal.Open>
+            {uniqueNotAvailableDays.map((day, index) => (
+              <Modal.Open key={index} opens={day}>
+                <AttendanceButton>{day}</AttendanceButton>
+              </Modal.Open>
             ))}
           </PendingList>
         )}
-        {isOpenModal && (
-          <Modal onClose={() => setIsOpenModal(false)}>{selectedItem}</Modal>
-        )}
+
+        <Modal.Window name="TodayAttendance">
+          <AttendanceModal WorkerData={WorkerData} day="Today" sites={sites} />
+        </Modal.Window>
+        {uniqueNotAvailableDays.map((day, index) => (
+          <Modal.Window key={index} name={day}>
+            <AttendanceModal WorkerData={WorkerData} day={day} sites={sites}>
+              {day}
+            </AttendanceModal>
+          </Modal.Window>
+        ))}
       </AttendanceBox>
     </AttendanceContainer>
   );

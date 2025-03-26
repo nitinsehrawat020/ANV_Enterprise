@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Attendance from "./Attendance";
 import {
   Addworker,
@@ -11,41 +10,40 @@ import Modal from "../../ui/Modal";
 import SpeedDialTooltipOpen from "../../ui/SpeedDial";
 import PaymentHistoryModal from "./PaymentHistoryModal";
 import UpdatePaymentModal from "./UpdatePaymentModal";
+import AddWorkerModal from "./AddWorkerModal";
 
-function ActionButton({ WorkerData }) {
-  const [isOpenModal, setIsOpenModal] = useState("updatePayment");
-
+function ActionButton({ WorkerData, sites }) {
   return (
     <>
-      <StyleActionButton>
-        <Attendance WorkerData={WorkerData} />
-        <UpdatePayment onClick={() => setIsOpenModal("updatePayment")}>
-          update payment
-        </UpdatePayment>
-        <PaymentHistory onClick={() => setIsOpenModal("paymentHistory")}>
-          Payment History
-        </PaymentHistory>
-        <Addworker onClick={() => setIsOpenModal("addWorker")}>
-          Add worker
-        </Addworker>
-      </StyleActionButton>
-      <FloatingIconButton>
-        <SpeedDialTooltipOpen setIsOpenModal={setIsOpenModal} />
-      </FloatingIconButton>
+      <Modal>
+        <StyleActionButton>
+          <Attendance WorkerData={WorkerData} sites={sites} />
 
-      {isOpenModal === "updatePayment" && (
-        <Modal onClose={() => setIsOpenModal("none")}>
-          <UpdatePaymentModal workerData={WorkerData} />
-        </Modal>
-      )}
-      {isOpenModal === "paymentHistory" && (
-        <Modal onClose={() => setIsOpenModal("none")}>
-          <PaymentHistoryModal workerData={WorkerData} />
-        </Modal>
-      )}
-      {isOpenModal === "addWorker" && (
-        <Modal onClose={() => setIsOpenModal("none")}>Add Worker</Modal>
-      )}
+          <Modal.Open opens="updatePayment">
+            <UpdatePayment>update payment</UpdatePayment>
+          </Modal.Open>
+          <Modal.Open opens="paymentHistory">
+            <PaymentHistory>Payment History</PaymentHistory>
+          </Modal.Open>
+          <Modal.Open opens="addWorker">
+            <Addworker>Add worker</Addworker>
+          </Modal.Open>
+
+          <Modal.Window name="updatePayment">
+            <UpdatePaymentModal workerData={WorkerData} />
+          </Modal.Window>
+          <Modal.Window name="paymentHistory">
+            <PaymentHistoryModal workerData={WorkerData} />
+          </Modal.Window>
+          <Modal.Window name="addWorker">
+            <AddWorkerModal workerData={WorkerData} />
+          </Modal.Window>
+        </StyleActionButton>
+
+        <FloatingIconButton>
+          <SpeedDialTooltipOpen />
+        </FloatingIconButton>
+      </Modal>
     </>
   );
 }

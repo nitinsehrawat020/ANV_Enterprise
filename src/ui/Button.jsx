@@ -17,6 +17,7 @@ export const Button = styled.button`
         cursor: pointer;
         font-size: ${props.size ? `${props.size}rem` : "1rem"};
         border: none;
+        transition: all 0.3s ease;
 
         @media ${device.laptop} {
           font-size: ${props.size ? `${props.size / 1.5}rem` : "0.75rem"};
